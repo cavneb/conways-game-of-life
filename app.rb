@@ -15,16 +15,18 @@ class Board
   end
 
   def get_status(x,y)
-    @cells[x][y]
+    @cells[x][y] rescue false
   end
 
-  def nc(x,y)
+  def nc(x, y)
+    c = 0
     ((x-1)..(x+1)).each do |a|
       ((y-1)..(y+1)).each do |b|
-        next if a==x && b==y
+        next if x == a && b == y
+        c += 1 if get_status(a, b) == true
       end
     end
-    2
+    c
   end
   
 end
