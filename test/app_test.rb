@@ -3,10 +3,6 @@ require File.expand_path("../../app.rb", __FILE__)
 
 class AppTest < MicroTest::Test
 
-  test "cell exists" do
-    assert Cell
-  end
-
   test "board exists" do
     assert Board
   end
@@ -16,9 +12,10 @@ class AppTest < MicroTest::Test
     assert b.cells
   end
 
-  test "cell has coords" do
-    c = Cell.new(1,2)
-    assert c.x == 1
+  test "board has map of cells" do
+    b = Board.new
+    b.add_cell(0, 0, true)
+    assert b.cells[0][0] == true
   end
 
 end
