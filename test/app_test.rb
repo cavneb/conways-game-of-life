@@ -18,4 +18,12 @@ class AppTest < MicroTest::Test
     assert b.cells[0][0] == true
   end
 
+  test "returns 2 live neighbors" do
+    b = Board.new
+    b.add_cell(0, -1, true)
+    b.add_cell(0, 0, true)
+    b.add_cell(0, 1, true)
+    assert b.nc(0,0) == 2
+  end
+
 end

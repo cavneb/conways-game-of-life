@@ -17,5 +17,11 @@ class Board
   def get_status(x,y)
     @cells[x][y]
   end
+
+  def nc(x,y)
+    #((x-1)..(x+1)).each do |a|
+    #  ((y-1)..(y+1)).each do |b|
+    2
+  end
   
 end
