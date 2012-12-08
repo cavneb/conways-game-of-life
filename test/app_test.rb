@@ -20,6 +20,5 @@ class AppTest < MicroTest::Test
     c = Cell.new(1,2)
     assert c.x == 1
   end
-  end
 
 end

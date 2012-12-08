@@ -8,5 +8,11 @@ class Board
 end
 
 class Cell
-  
+  attr_accessor :x
+  def initialize(x,y)
+    @x = x
+  end
+
+
+
 end
