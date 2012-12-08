@@ -16,4 +16,10 @@ class AppTest < MicroTest::Test
     assert b.cells
   end
 
+  test "cell has coords" do
+    c = Cell.new(1,2)
+    assert c.x == 1
+  end
+  end
+
 end
