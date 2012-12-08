@@ -13,5 +13,9 @@ class Board
       @cells[x][y] = living
     end
   end
+
+  def get_status(x,y)
+    @cells[x][y]
+  end
   
 end
