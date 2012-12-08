@@ -11,4 +11,9 @@ class AppTest < MicroTest::Test
     assert Board
   end
 
+  test "board has cells" do
+    b = Board.new
+    assert b.cells
+  end
+
 end
