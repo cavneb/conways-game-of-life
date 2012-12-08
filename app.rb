@@ -19,8 +19,11 @@ class Board
   end
 
   def nc(x,y)
-    #((x-1)..(x+1)).each do |a|
-    #  ((y-1)..(y+1)).each do |b|
+    ((x-1)..(x+1)).each do |a|
+      ((y-1)..(y+1)).each do |b|
+        next if a==x && b==y
+      end
+    end
     2
   end
   
