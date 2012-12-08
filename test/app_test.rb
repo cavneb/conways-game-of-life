@@ -7,4 +7,8 @@ class AppTest < MicroTest::Test
     assert Cell
   end
 
+  test "board exists" do
+    assert Board
+  end
+
 end
