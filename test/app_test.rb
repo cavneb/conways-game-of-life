@@ -3,6 +3,13 @@ require File.expand_path("../../app.rb", __FILE__)
 
 class AppTest < MicroTest::Test
 
+  before :each do
+    @b = Board.new
+    @b.add_cell(0, -1, true)
+    @b.add_cell(0, 1, true)
+    @b.add_cell(0, 0, true)
+  end
+
   test "board exists" do
     assert Board
   end
@@ -25,13 +32,17 @@ class AppTest < MicroTest::Test
     assert b.get_status(1, 0)
   end
 
-  test "stuff" do
-    b = Board.new
-    b.add_cell(0, -1, true)
-    b.add_cell(0, 1, true)
-    b.add_cell(0, 0, true)
+  test "neighbor count" do
+    assert @b.neighbor_count(0, 0) == 2
+  end
 
-    assert b.nc(0, 0) == 2
+  test "cell should die" do
+    @b.add_cell(9, 0, true)
+    assert @b.should_die(9, 0)
+  end
+
+  test "render" do
+    @b.render
   end
 
 end
